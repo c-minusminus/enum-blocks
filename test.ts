@@ -1,3 +1,4 @@
+/*
 let dy = 0
 let dx = 0
 Enum.setEnumVarStatement("PlayerAnims", "IDLE")
@@ -46,3 +47,4 @@ game.onUpdate(function () {
         assets.image`NW`
     ][currentAnim])
 })
+*/
