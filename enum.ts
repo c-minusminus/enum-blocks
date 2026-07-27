@@ -77,19 +77,29 @@ namespace Enum {
         return val
     }
 
-    /**
-     * Gets an enum name from given value.
-     * @param e The enum category name
-     * @param var string to get
-     * @returns The existing or newly created number value.
-     */
-    //% group="Simple"
-    //% blockId=enum_enumStr block="enum $e number $val"
+	/**
+	 * Finds and returns the enum key name associated with a specific number value.
+	 * @param e The enum category name
+	 * @param val The number value to look up
+	 * @returns The name of the key matching the number, or null if not found.
+	 */
+	//% group="Simple"
+	//% blockId=enum_enumStr block="name from enum $e with value $val"
     //% e.shadow="enum_enumShadow"
-    //% weight=100
-    export function enumStr(e: string, val: number) {
-        return enums[e].indexOf(val)
-    }
+	//% weight=40
+	export function enumStr(e: string, val: number): string {
+    	const en = enums[e]
+    	if (!en) return null
+
+    	const keys = Object.keys(en)
+    	for (let i = 0; i < keys.length; i++) {
+        	let key = keys[i]
+    		if (en[key] === val) {
+        		return key
+        	}
+    	}
+    	return null
+	}
 
     //% block="$name"
     //% blockId=enum_enumShadow
