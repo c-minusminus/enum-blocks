@@ -77,6 +77,20 @@ namespace Enum {
         return val
     }
 
+    /**
+     * Gets an enum name from given value.
+     * @param e The enum category name
+     * @param var string to get
+     * @returns The existing or newly created number value.
+     */
+    //% group="Simple"
+    //% blockId=enum_enumStr block="enum $e number $val"
+    //% e.shadow="enum_enumShadow"
+    //% weight=100
+    export function enumStr(e: string, val: number) {
+        return enums[e].indexOf(val)
+    }
+
     //% block="$name"
     //% blockId=enum_enumShadow
     //% blockHidden=true shim=TD_ID
